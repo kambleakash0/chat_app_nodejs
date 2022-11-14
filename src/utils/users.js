@@ -1,12 +1,9 @@
 const users = []
 
-const addUser = ({ id, room, username, contact, items, date }) => {
+const addUser = ({ id, username, room }) => {
     // Clean the data
     username = username.trim().toLowerCase()
-    room = room
-    contact = contact
-    items = items
-    date = date
+    room = room.trim().toLowerCase()
 
     // Validate the data
     if (!username || !room) {
@@ -28,7 +25,7 @@ const addUser = ({ id, room, username, contact, items, date }) => {
     }
 
     // Store user
-    const user = { id, room, username, contact, items, date }
+    const user = { id, username, room }
     users.push(user)
     return { user }
 }
